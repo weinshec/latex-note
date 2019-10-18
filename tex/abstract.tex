@@ -1,0 +1,14 @@
+\usepackage{abstract}
+
+\makeatletter
+\if@twocolumn
+\newcommand{\notwocolumn}[1]
+{%
+  \twocolumn[
+    \renewcommand{\abstractname}{\vspace{-2\baselineskip}}
+    #1
+    \vspace{1em}
+  ]
+}
+\fi
+\makeatother

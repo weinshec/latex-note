@@ -1,0 +1,65 @@
+% _____________________________________________________________________________
+% Colors                                                                 COLORS
+
+\definecolor{highlight}{RGB}{67,158,204}
+
+% _____________________________________________________________________________
+% Fonts                                                                   FONTS
+
+% global headings
+\addtokomafont{disposition}{\usefont{T1}{qhv}{m}{n}\selectfont}
+
+% TOC fonts
+\newcommand\tocmainfont[1]{\usekomafont{disposition}#1}
+\RedeclareSectionCommands[
+  tocentrynumberformat=\tocmainfont,
+  tocpagenumberformat=\tocmainfont
+]{part,section,subsection,subsubsection}
+\DeclareTOCStyleEntry[beforeskip=0.2em]{section}{section}
+
+% title
+\addtokomafont{title}{\fontsize{16pt}{16pt}\selectfont}
+\addtokomafont{subtitle}{\fontsize{14pt}{14pt}\selectfont}
+\addtokomafont{author}{\fontsize{12pt}{12pt}\selectfont}
+\addtokomafont{date}{\fontsize{10pt}{10pt}\selectfont}
+
+% page numbers
+\renewcommand*{\pagemark}{\textbf{\thepage}}
+
+% _____________________________________________________________________________
+% Chapter/Section formatting                         CHAPTER/SECTION FORMATTING
+
+\renewcommand\sectionformat{%
+  \raisebox{-0.23\height}{%
+    \begin{tikzpicture}
+      \node[color=highlight] (n) at (0,0) {\thesection\autodot};
+      \draw[line width=0.3mm, color=highlight] (n.south east) -- (n.north east);
+    \end{tikzpicture}
+  }
+}
+
+\renewcommand\subsectionformat{%
+  \raisebox{-0.23\height}{%
+    \begin{tikzpicture}
+      \node[color=highlight] (n) at (0,0) {\thesubsection\autodot};
+      \draw[line width=0.3mm, color=highlight] (n.south east) -- (n.north east);
+    \end{tikzpicture}
+  }
+}
+
+% _____________________________________________________________________________
+% Header / Footer                                               HEADER / FOOTER
+
+\usepackage[]{scrlayer-scrpage}
+\clearpairofpagestyles%
+
+\ohead{%
+  \headmark%
+  \raisebox{-1.5mm}{\makebox[0pt][l]{%
+    \hspace{1.5mm}
+    \begin{tikzpicture}
+      \node[color=black] (n) at (0,0) {\pagemark};
+      \draw[very thick, color=highlight] (n.south west) -- (n.north west);
+    \end{tikzpicture}
+  }}
+}

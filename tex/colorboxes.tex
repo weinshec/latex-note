@@ -1,0 +1,45 @@
+\usepackage{tcolorbox}
+
+\definecolor{colorNoteTitle}{HTML}{6ab0de}
+\definecolor{colorNoteBody}{HTML}{e7f2fa}
+
+\newtcolorbox{note}[1][Note]{%
+  title=\textbf{#1},
+  colbacktitle=colorNoteTitle,
+  colback=colorNoteBody,
+  colframe=white,
+  boxrule=0mm,
+  arc=0mm,
+  left=2mm,
+  toptitle=0mm,
+  bottomtitle=0mm,
+  before title=\strut,
+}
+
+\definecolor{colorImportantTitle}{HTML}{f29f97}
+\definecolor{colorImportantBody}{HTML}{fdf3f2}
+
+\newtcolorbox{important}[1][Important]{%
+  title=\textbf{#1},
+  colbacktitle=colorImportantTitle,
+  colback=colorImportantBody,
+  colframe=white,
+  boxrule=0mm,
+  arc=0mm,
+  left=2mm,
+  toptitle=0mm,
+  bottomtitle=0mm,
+  before title=\strut,
+}
+
+\definecolor{colorLeftRule}{RGB}{67,158,204}
+
+\newtcolorbox{leftrule}{%
+  colframe=colorLeftRule,
+  leftrule=1mm,
+  rightrule=0mm,
+  toprule=0mm,
+  bottomrule=0mm,
+  arc=0mm,
+  left=2mm,
+}

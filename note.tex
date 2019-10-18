@@ -1,0 +1,130 @@
+\documentclass[paper=A4,
+               fontsize=10pt,
+               DIV=15,
+               twocolumn,
+              ]{scrartcl}
+
+%______________________________________________________________________________
+%                                                                      PACKAGES
+% input encoding and language
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% font
+\usepackage{lmodern}
+\usepackage[bitstream-charter]{mathdesign}
+
+% colors
+\usepackage{xcolor}
+
+% figures, tables
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+% math
+\usepackage[fleqn]{amsmath}
+\usepackage{mathtools}
+\usepackage{bm}
+
+% includes
+\include{typesetting}
+\include{colorboxes}
+\include{listings}
+\include{units}
+\include{abstract}
+\include{koma_style}
+
+% misc
+\usepackage{url}
+\usepackage[
+  colorlinks=false,
+  pdfborder={0 0 0},
+  plainpages=false,
+  pageanchor=true
+]{hyperref}
+\usepackage{lipsum}
+\usepackage{pdfpages}
+\pdfsuppresswarningpagegroup=1  % %http://tex.stackexchange.com/questions/76273
+\usepackage{authblk}
+
+
+%______________________________________________________________________________
+%                                                            CUSTOM DEFINITIONS
+
+% Math abbreviations
+\newcommand{\del}{\partial}
+\newcommand{\deq}{\vcentcolon=}  % requires mathtools
+\newcommand{\qed}{=\vcentcolon}  % requires mathtools
+\newcommand{\order}[1]{\mathcal{O}{(#1)}}
+
+
+% _____________________________________________________________________________
+%                                                                      SETTINGS
+
+\setcounter{tocdepth}{2}    % depth of TableOfContents
+\setlength{\parindent}{6mm} % indentation of paragraph start
+
+
+%______________________________________________________________________________
+%                                                                      DOCUMENT
+\title{LaTeX note template}
+\author[1]{Christoph Weinsheimer}
+\affil[1]{\url{christoph.weinsheimer@esrlabs.com}}
+\date{\today}
+
+\begin{document}
+
+\notwocolumn{%
+  \maketitle
+  \begin{abstract}
+    Nam dui ligula, fringilla a, euismod sodales, sollicitudin
+    vel, wisi. Morbi auctor lorem non justo. Nam lacus libero,
+    pretium at, lobortis vitae, ultricies et, tellus. Donec ali-
+    quet, tortor sed accumsan bibendum, erat ligula aliquet
+    magna, vitae ornare odio metus a mi. Morbi ac orci et
+    nisl hendrerit mollis. Suspendisse ut massa. Cras nec
+    ante. Pellentesque a nulla. Cum sociis natoque penati-
+    bus et magnis dis parturient montes, nascetur ridiculus
+    mus. Aliquam tincidunt urna. Nulla ullamcorper vestibu-
+    lum turpis. Pellentesque cursus luctus mauris.
+  \end{abstract}
+}
+
+\tableofcontents
+
+\section{Foobar}
+  \lipsum[2]
+\subsection{Barfoo}
+  \lipsum[1]
+
+  \begin{leftrule}
+    Left rule text box showing a highlighted line on the left of this text
+  \end{leftrule}
+
+  \begin{important}
+    This is very, very , I literaly mean very important note!
+  \end{important}
+
+  \begin{note}
+    This is going to be inside the box
+    This goes under the split
+  \end{note}
+
+  \lipsum[2]
+  
+  \begin{minted}{python}
+    def some_funtion(self, some_argument):
+        pass
+  \end{minted}
+
+  Here goes some text
+  \begin{equation}
+    e^{i\pi} + 1 = 0
+  \end{equation}
+
+\section{Another very important section}
+  \lipsum
+
+\end{document}
