@@ -50,4 +50,5 @@ ${BUILD}:
 
 clean:
 	rm -rf ${BUILD}
+	rm ${TIKZ_IMG}
 	if [ -f ${PROJECT}.pdf ] ; then rm ${PROJECT}.pdf ; fi;
